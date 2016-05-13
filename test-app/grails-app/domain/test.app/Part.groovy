@@ -17,5 +17,6 @@ class Part {
     static belongsTo = [workOrder: WorkOrder]
 
     static constraints = {
+        workOrder nullable: true
     }
 }

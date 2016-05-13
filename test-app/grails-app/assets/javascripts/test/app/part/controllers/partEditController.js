@@ -18,7 +18,12 @@ function PartEditController(Part, $stateParams, $state) {
         vm.part.$update(function() {
             $state.go('part.list');
         }, function(response) {
-            vm.errors = response.data;
+            var data = response.data;
+            if (!angular.isArray(data)) {
+                vm.errors = [data];
+            } else {
+                vm.errors = data;
+            }
         });
     };
 }

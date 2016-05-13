@@ -292,6 +292,8 @@ fieldset.embedded {
 
 fieldset.embedded legend {
     margin: 0 1em;
+    width: initial;
+    border-bottom: none;
 }
 
 /* MESSAGES AND ERRORS */

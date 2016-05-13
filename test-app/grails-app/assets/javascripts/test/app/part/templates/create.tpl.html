@@ -10,7 +10,7 @@
         <li ng-repeat="error in vm.errors">{{error.message}}</li>
     </ul>
 
-    <form name="savePart" ng-submit="savePart()">
+    <form name="savePart" ng-submit="vm.savePart()">
         <fieldset class="form">
             <ng-include src="'/test/app/part/form.html'"></ng-include>
         </fieldset>
