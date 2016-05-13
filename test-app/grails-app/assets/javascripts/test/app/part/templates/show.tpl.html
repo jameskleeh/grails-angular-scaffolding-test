@@ -1,0 +1,89 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a class="list" ui-sref="part.list" class="list">Part List</a></li>
+        <li><a class="create" ui-sref="part.create" class="create">New Part</a></li>
+    </ul>
+</div>
+<div id="show-part" class="content scaffold-show" role="main">
+    <h1>Show Part</h1>
+    <ol class="property-list part">
+        
+        <li class="fieldcontain">
+  <span id="workOrder-label" class="property-label">Work Order</span>
+  <div class="property-value" aria-labelledby="workOrder-label" />
+</li>
+        
+        <li class="fieldcontain">
+  <span id="serialNumber-label" class="property-label">Serial Number</span>
+  <div class="property-value" aria-labelledby="serialNumber-label">
+    <span>{{vm.part.serialNumber}}</span>
+  </div>
+</li>
+        
+        <li class="fieldcontain">
+  <span id="quantity-label" class="property-label">Quantity</span>
+  <div class="property-value" aria-labelledby="quantity-label">
+    <span>{{vm.part.quantity}}</span>
+  </div>
+</li>
+        
+        <li class="fieldcontain">
+  <span id="cost-label" class="property-label">Cost</span>
+  <div class="property-value" aria-labelledby="cost-label">
+    <span>{{vm.part.cost}}</span>
+  </div>
+</li>
+        
+        <li class="fieldcontain">
+  <span id="address-label" class="property-label">Address</span>
+  <div class="property-value" aria-labelledby="address-label">
+<li class="fieldcontain">
+  <span id="address.city-label" class="property-label">City</span>
+  <div class="property-value" aria-labelledby="address.city-label">
+    <span>{{vm.address.address.city}}</span>
+  </div>
+</li>
+<li class="fieldcontain">
+  <span id="address.street-label" class="property-label">Street</span>
+  <div class="property-value" aria-labelledby="address.street-label">
+    <span>{{vm.address.address.street}}</span>
+  </div>
+</li>
+<li class="fieldcontain">
+  <span id="address.id-label" class="property-label">Id</span>
+  <div class="property-value" aria-labelledby="address.id-label">
+    <span>{{vm.address.address.id}}</span>
+  </div>
+</li>
+<li class="fieldcontain">
+  <span id="address.version-label" class="property-label">Version</span>
+  <div class="property-value" aria-labelledby="address.version-label">
+    <span>{{vm.address.address.version}}</span>
+  </div>
+</li></div>
+</li>
+        
+        <li class="fieldcontain">
+  <span id="description-label" class="property-label">Description</span>
+  <div class="property-value" aria-labelledby="description-label">
+    <span>{{vm.part.description}}</span>
+  </div>
+</li>
+        
+        <li class="fieldcontain">
+  <span id="type-label" class="property-label">Type</span>
+  <div class="property-value" aria-labelledby="type-label">
+    <span>{{vm.part.type}}</span>
+  </div>
+</li>
+        
+    </ol>
+
+    <form ng-submit="vm.delete()">
+        <fieldset class="buttons">
+            <a class="edit" ui-sref="part.edit({id: vm.part.id})">Edit</a>
+            <input class="delete" type="submit" value="Delete" onclick="return confirm('Are you sure?');" />
+        </fieldset>
+    </form>
+</div>

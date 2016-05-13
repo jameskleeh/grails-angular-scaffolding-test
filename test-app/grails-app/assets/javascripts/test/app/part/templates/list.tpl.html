@@ -1,0 +1,52 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a ui-sref="part.create" class="create">New Part</a></li>
+    </ul>
+</div>
+<div id="list-part" class="content scaffold-list" role="main">
+    <h1>Part List</h1>
+    <table>
+        <thead>
+        <tr>
+            
+                <th>Work Order</th>
+            
+                <th>Serial Number</th>
+            
+                <th>Quantity</th>
+            
+                <th>Cost</th>
+            
+                <th>Address</th>
+            
+                <th>Description</th>
+            
+                <th>Type</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+            <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="part in vm.parts">
+                
+                <td>{{part.workOrder}}</td>
+                
+                <td>{{part.serialNumber}}</td>
+                
+                <td>{{part.quantity}}</td>
+                
+                <td>{{part.cost}}</td>
+                
+                <td>{{part.address}}</td>
+                
+                <td>{{part.description}}</td>
+                
+                <td>{{part.type}}</td>
+                
+            </tr>
+        </tbody>
+    </table>
+    <!--    <div class="pagination">
+            <g:paginate total="${partCount ?: 0}" />
+        </div>-->
+</div>
