@@ -3,3 +3,4 @@
 *.iml
 classes/
 test-app/build
+test-app/node_modules
