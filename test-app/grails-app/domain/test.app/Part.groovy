@@ -6,11 +6,12 @@ import grails.rest.Resource
 class Part {
 
     Integer serialNumber
-    BigDecimal quantity
     String description
     PartType type
     BigDecimal cost
     Address address
+    byte[] file
+    Date dueDate
 
     static embedded = ['address']
 
@@ -18,5 +19,6 @@ class Part {
 
     static constraints = {
         workOrder nullable: true
+        file maxSize: 1000000
     }
 }

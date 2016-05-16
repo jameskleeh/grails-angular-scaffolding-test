@@ -4,13 +4,13 @@
         <li><a ui-sref="part.list" class="list">Part List</a></li>
     </ul>
 </div>
-<div id="create-part" class="content scaffold-create" role="main">
+<div id="edit-part" class="content scaffold-edit" role="main">
     <h1>Edit Part</h1>
     <ul class="errors" role="alert" ng-if="vm.errors">
         <li ng-repeat="error in vm.errors">{{error.message}}</li>
     </ul>
 
-    <form name="savePart">
+    <form name="updatePart" ng-submit="vm.updatePart()">
         <fieldset class="form">
             <ng-include src="test/app/part/form.html"></ng-include>
         </fieldset>

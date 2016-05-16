@@ -15,10 +15,10 @@ function PartCreateController(Part, $state) {
             $state.go('part.list');
         }, function(response) {
             var data = response.data;
-            if (!angular.isArray(data)) {
+            if (data.hasOwnProperty('message')) {
                 vm.errors = [data];
             } else {
-                vm.errors = data;
+                vm.errors = data._embedded.errors;
             }
         });
     };
