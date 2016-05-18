@@ -2,20 +2,16 @@ package test.app
 
 import grails.rest.Resource
 
-@Resource(uri='/part', formats=['json'])
-class Part {
+@Resource(uri='/toy', formats=['json'])
+class Toy {
 
     Integer serialNumber
     String description
-    PartType type
+    ToyType type
     BigDecimal cost
     Address address
-    byte[] file
     Date dueDate
+    TimeZone timeZone
 
     static embedded = ['address']
-
-    static constraints = {
-        file maxSize: 1000000
-    }
 }

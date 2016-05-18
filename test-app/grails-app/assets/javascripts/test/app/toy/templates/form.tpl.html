@@ -1,0 +1,59 @@
+
+<div class="fieldcontain required">
+  <label for="serialNumber">Serial Number
+    <span class="required-indicator">*</span>
+  </label>
+  <input required="" ng-model="vm.toy.serialNumber" name="serialNumber" id="serialNumber" type="number" />
+</div>
+
+<div class="fieldcontain required">
+  <label for="cost">Cost
+    <span class="required-indicator">*</span>
+  </label>
+  <input required="" ng-model="vm.toy.cost" name="cost" id="cost" type="number decimal" />
+</div>
+
+<fieldset class="embedded address">
+  <legend>Address</legend>
+  <div class="fieldcontain required">
+    <label for="address.city">City
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" ng-model="vm.toy.address.city" name="address.city" id="address.city" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="address.street">Street
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" ng-model="vm.toy.address.street" name="address.street" id="address.street" type="text" />
+  </div>
+</fieldset>
+
+<div class="fieldcontain required">
+  <label for="dueDate">Due Date
+    <span class="required-indicator">*</span>
+  </label>
+  <input required="" ng-model="vm.toy.dueDate" name="dueDate" id="dueDate" type="date" />
+</div>
+
+<div class="fieldcontain required">
+  <label for="description">Description
+    <span class="required-indicator">*</span>
+  </label>
+  <input required="" ng-model="vm.toy.description" name="description" id="description" type="text" />
+</div>
+
+<div class="fieldcontain required">
+  <label for="timeZone">Time Zone
+    <span class="required-indicator">*</span>
+  </label>
+  {{vm.toy}}
+  <select required="" ng-model="vm.toy.timeZone" name="timeZone" id="timeZone" ng-init="vm.toy.timeZone = 'America/New_York'" ng-options="key as value for (key , value) in vm.timeZoneList"></select>
+</div>
+
+<div class="fieldcontain required">
+  <label for="type">Type
+    <span class="required-indicator">*</span>
+  </label>
+  <select required='' ng-model='vm.toy.type' name='type' id='type' ng-options='type.id as type.name for type in [{"id":"ACTION_FIGURE","name":"Action Figure"},{"id":"DOLL","name":"Doll"}]'></select>
+</div>
