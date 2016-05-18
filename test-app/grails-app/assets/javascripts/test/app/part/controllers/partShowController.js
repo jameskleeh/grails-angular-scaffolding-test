@@ -18,7 +18,7 @@ function PartShowController(Part, $stateParams, $state) {
             $state.go('part.list');
         }, function() {
             //on error
-        })
+        });
     };
 
 }

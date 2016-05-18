@@ -1,7 +1,7 @@
 //= wrapped
 
 angular
-    .module("test.app.toy")
+    .module("test.app.core")
     .service("timeZoneService", timeZoneService);
 
 function timeZoneService() {
@@ -625,5 +625,5 @@ function timeZoneService() {
     "SST": "SBT, Solomon Is. Time 11:0.0 [SST]",
     "VST": "ICT, Indochina Time 7:0.0 [VST]"
 };
-    };
+    }
 }

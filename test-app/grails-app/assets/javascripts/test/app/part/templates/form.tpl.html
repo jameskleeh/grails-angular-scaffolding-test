@@ -1,63 +1,14 @@
 
-<div class="fieldcontain">
-  <label for="workOrder">Work Order</label>
+<div class="fieldcontain required">
+  <label for="name">Name
+    <span class="required-indicator">*</span>
+  </label>
+  <input required="" ng-model="vm.part.name" name="name" id="name" type="text" />
 </div>
 
 <div class="fieldcontain required">
-  <label for="file">File
+  <label for="partType">Part Type
     <span class="required-indicator">*</span>
   </label>
-  <input required="" name="file" id="file" type="file" file-model="vm.part.file" />
-</div>
-
-<div class="fieldcontain required">
-  <label for="serialNumber">Serial Number
-    <span class="required-indicator">*</span>
-  </label>
-  <input required="" ng-model="vm.part.serialNumber" name="serialNumber" id="serialNumber" type="number" />
-</div>
-
-<div class="fieldcontain required">
-  <label for="cost">Cost
-    <span class="required-indicator">*</span>
-  </label>
-  <input required="" ng-model="vm.part.cost" name="cost" id="cost" type="number decimal" />
-</div>
-
-<fieldset class="embedded address">
-  <legend>Address</legend>
-  <div class="fieldcontain required">
-    <label for="address.city">City
-      <span class="required-indicator">*</span>
-    </label>
-    <input required="" ng-model="vm.part.address.city" name="address.city" id="address.city" type="text" />
-  </div>
-  <div class="fieldcontain required">
-    <label for="address.street">Street
-      <span class="required-indicator">*</span>
-    </label>
-    <input required="" ng-model="vm.part.address.street" name="address.street" id="address.street" type="text" />
-  </div>
-</fieldset>
-
-<div class="fieldcontain required">
-  <label for="dueDate">Due Date
-    <span class="required-indicator">*</span>
-  </label>
-  {{vm.part.dueDate.getDay()}}
-  <input required="" ng-model="vm.part.dueDate" name="dueDate" id="dueDate" type="date" />
-</div>
-
-<div class="fieldcontain required">
-  <label for="description">Description
-    <span class="required-indicator">*</span>
-  </label>
-  <input required="" ng-model="vm.part.description" name="description" id="description" type="text" />
-</div>
-
-<div class="fieldcontain required">
-  <label for="type">Type
-    <span class="required-indicator">*</span>
-  </label>
-  <select required='' ng-model='vm.part.type' name='type' id='type' ng-options='type.id as type.name for type in [{"id":"ELECTRICAL","name":"ELECTRICAL"},{"id":"MECHANICAL","name":"MECHANICAL"}]'></select>
+  <select required="" ng-model="vm.part.partType" name="partType" id="partType" ng-options="partType.id as partType for partType in vm.partTypeList"></select>
 </div>

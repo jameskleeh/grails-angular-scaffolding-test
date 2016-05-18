@@ -4,13 +4,14 @@ angular
     .module("test.app.part")
     .controller("PartCreateController", PartCreateController);
 
-function PartCreateController(Part, $state) {
-    var vm = this;
+function PartCreateController(Part, $state, PartType) {
 
+    var vm = this;
+    vm.partTypeList = PartType.list();
     vm.part = new Part();
 
     vm.savePart = function() {
-        vm.errors = [];
+        vm.errors = undefined;
         vm.part.$save({}, function() {
             $state.go('part.list');
         }, function(response) {

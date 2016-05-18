@@ -1,8 +1,8 @@
 //= wrapped
 //= require /angular/angular 
-//= require /test/app/core/test.app.core
-
 //= require /angular/angular-ui-router
+//= require /test/app/core/test.app.core
+//= require /test/app/partType/test.app.partType
 //= require_self
 //= require_tree services
 //= require_tree controllers
@@ -10,7 +10,11 @@
 //= require_tree domain
 //= require_tree templates
 
-angular.module("test.app.part", ["test.app.core", "ui.router"])
+angular.module("test.app.part", [
+    "ui.router",
+    "test.app.core",
+    "test.app.partType"
+])
     .config(config);
 
 function config($stateProvider) {

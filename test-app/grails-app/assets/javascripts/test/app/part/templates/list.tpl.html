@@ -10,38 +10,22 @@
         <thead>
         <tr>
             
-                <th>Work Order</th>
+                <th>Name</th>
             
-                <th>File</th>
-            
-                <th>Serial Number</th>
-            
-                <th>Cost</th>
-            
-                <th>Address</th>
-            
-                <th>Due Date</th>
-            
-                <th>Description</th>
+                <th>Part Type</th>
             
         </tr>
         </thead>
         <tbody>
             <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="part in vm.parts">
                 
-                <td>{{part.workOrder}}</td>
+                    
+                        <td><a ui-sref="part.show({id: part.id})">{{part.name}}</a></td>
+                    
                 
-                <td>{{part.file}}</td>
-                
-                <td>{{part.serialNumber}}</td>
-                
-                <td>{{part.cost}}</td>
-                
-                <td>{{part.address}}</td>
-                
-                <td>{{part.dueDate}}</td>
-                
-                <td>{{part.description}}</td>
+                    
+                        <td>{{part.partType}}</td>
+                    
                 
             </tr>
         </tbody>

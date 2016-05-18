@@ -4,8 +4,10 @@ angular
     .module("test.app.part")
     .controller("PartEditController", PartEditController);
 
-function PartEditController(Part, $stateParams, $state) {
+function PartEditController(Part, $stateParams, $state, PartType) {
     var vm = this;
+
+    vm.partTypeList = PartType.list();
 
     Part.get({id: $stateParams.id}, function(data) {
         vm.part = new Part(data);
@@ -14,7 +16,7 @@ function PartEditController(Part, $stateParams, $state) {
     });
 
     vm.updatePart = function() {
-        vm.errors = [];
+        vm.errors = undefined;
         vm.part.$update(function() {
             $state.go('part.list');
         }, function(response) {
