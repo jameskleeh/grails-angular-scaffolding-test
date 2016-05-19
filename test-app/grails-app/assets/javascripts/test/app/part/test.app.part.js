@@ -14,8 +14,7 @@ angular.module("test.app.part", [
     "ui.router",
     "test.app.core",
     "test.app.partType"
-])
-    .config(config);
+]).config(config);
 
 function config($stateProvider) {
     $stateProvider

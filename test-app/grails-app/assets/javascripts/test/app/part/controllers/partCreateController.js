@@ -13,7 +13,7 @@ function PartCreateController(Part, $state, PartType) {
     vm.savePart = function() {
         vm.errors = undefined;
         vm.part.$save({}, function() {
-            $state.go('part.list');
+            $state.go('part.show', {id: vm.part.id});
         }, function(response) {
             var data = response.data;
             if (data.hasOwnProperty('message')) {

@@ -10,6 +10,6 @@ function PartListController(Part) {
     var max = 10, offset = 0;
 
     Part.list({max: max, offset: offset}, function(data) {
-        vm.parts = data;
+        vm.partList = data;
     });
 }

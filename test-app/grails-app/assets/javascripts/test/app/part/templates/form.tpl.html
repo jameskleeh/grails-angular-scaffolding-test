@@ -10,5 +10,5 @@
   <label for="partType">Part Type
     <span class="required-indicator">*</span>
   </label>
-  <select required="" ng-model="vm.part.partType" name="partType" id="partType" ng-options="partType.id as partType for partType in vm.partTypeList"></select>
+  <select required="" ng-model="vm.part.partType" name="partType" id="partType" ng-options="partType as partType for partType in vm.partTypeList track by partType.id"></select>
 </div>
