@@ -27,6 +27,5 @@ function Part($resource, PartType) {
         return partList.map(convertToPartType);
     }
     
-
     return Part;
 }

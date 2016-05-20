@@ -18,8 +18,6 @@ function PartType($resource) {
     PartType.prototype.toString = function() {
         return 'test.app.PartType : ' + (this.id ? this.id : '(unsaved)');
     };
-
     
-
     return PartType;
 }
