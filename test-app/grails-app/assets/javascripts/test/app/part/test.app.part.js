@@ -2,7 +2,9 @@
 //= require /angular/angular 
 //= require /angular/angular-ui-router
 //= require /test/app/core/test.app.core
+//= require /test/app/tag/test.app.tag
 //= require /test/app/partType/test.app.partType
+//= require /test/app/subPart/test.app.subPart
 //= require_self
 //= require_tree services
 //= require_tree controllers
@@ -13,7 +15,9 @@
 angular.module("test.app.part", [
     "ui.router",
     "test.app.core",
-    "test.app.partType"
+    "test.app.tag",
+    "test.app.partType",
+    "test.app.subPart"
 ]).config(config);
 
 function config($stateProvider) {

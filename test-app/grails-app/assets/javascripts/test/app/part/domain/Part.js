@@ -4,13 +4,15 @@ angular
     .module("test.app.part")
     .factory("Part", Part);
 
-function Part($resource, PartType) {
+function Part($resource, domainListConversion, domainToManyConversion, domainConversion) {
+    var queryResponseTransforms = [angular.fromJson, domainListConversion("Tag", "tallyWags", "domainToManyConversion"), domainListConversion("PartType", "foo", "domainConversion"), domainListConversion("SubPart", "bars", "domainToManyConversion")];
+    var getResponseTransforms = [angular.fromJson, domainToManyConversion("Tag", "tallyWags"), domainConversion("PartType", "foo"), domainToManyConversion("SubPart", "bars")];
     var Part = $resource(
         "part/:id",
         {"id": "@id"},
         {"update": {method: "PUT"},
-         "query": {method: "GET", isArray: true, transformResponse: [angular.fromJson, transformPartType]},
-         "get": {method: 'GET', transformResponse: [angular.fromJson, convertToPartType]}}
+         "query": {method: "GET", isArray: true, transformResponse: queryResponseTransforms},
+         "get": {method: 'GET', transformResponse: getResponseTransforms}}
     );
 
     Part.list = Part.query;
@@ -18,14 +20,6 @@ function Part($resource, PartType) {
     Part.prototype.toString = function() {
         return 'test.app.Part : ' + (this.id ? this.id : '(unsaved)');
     };
-    
-    function convertToPartType(part) {
-        part.partType = new PartType(part.partType);
-        return part;
-    }
-    function transformPartType(partList) {
-        return partList.map(convertToPartType);
-    }
-    
+
     return Part;
 }

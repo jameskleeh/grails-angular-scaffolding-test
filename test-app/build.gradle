@@ -41,7 +41,7 @@ dependencyManagement {
 }
 
 dependencies {
-    assets "com.craigburke.angular:angular-template-asset-pipeline:2.2.6"
+    assets "com.craigburke.angular:angular-template-asset-pipeline:2.3.0"
     assets "com.craigburke.angular:angular-annotate-asset-pipeline:2.4.0"
     assets "com.craigburke:js-closure-wrap-asset-pipeline:1.2.0"
     compile "org.springframework.boot:spring-boot-starter-logging"

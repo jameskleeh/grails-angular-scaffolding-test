@@ -9,15 +9,35 @@
     <h1>Show Part</h1>
     <ol class="property-list part">
   <li class="fieldcontain">
+    <span id="tallyWags-label" class="property-label">Tally Wags</span>
+    <div class="property-value" aria-labelledby="tallyWags-label">
+      <ul ng-repeat="tag in vm.part.tallyWags">
+        <li>
+          <a ui-sref="tag.show({id: tag.id})">{{tag.toString()}}</a>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="foo-label" class="property-label">Foo</span>
+    <div class="property-value" aria-labelledby="foo-label">
+      <a ui-sref="partType.show({id: vm.part.foo.id})">{{vm.part.foo.toString()}}</a>
+    </div>
+  </li>
+  <li class="fieldcontain">
     <span id="name-label" class="property-label">Name</span>
     <div class="property-value" aria-labelledby="name-label">
       <span>{{vm.part.name}}</span>
     </div>
   </li>
   <li class="fieldcontain">
-    <span id="partType-label" class="property-label">Part Type</span>
-    <div class="property-value" aria-labelledby="partType-label">
-      <a ui-sref="partType.show({id: vm.part.partType.id})">{{vm.part.partType.toString()}}</a>
+    <span id="bars-label" class="property-label">Bars</span>
+    <div class="property-value" aria-labelledby="bars-label">
+      <ul ng-repeat="subPart in vm.part.bars">
+        <li>
+          <a ui-sref="subPart.show({id: subPart.id})">{{subPart.toString()}}</a>
+        </li>
+      </ul>
     </div>
   </li>
 </ol>

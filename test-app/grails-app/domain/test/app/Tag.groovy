@@ -2,11 +2,10 @@ package test.app
 
 import grails.rest.Resource
 
-@Resource(uri='/part', formats=['json'])
-class Part {
+@Resource(uri="/tag")
+class Tag {
 
     String name
-    PartType partType
 
     static constraints = {
     }

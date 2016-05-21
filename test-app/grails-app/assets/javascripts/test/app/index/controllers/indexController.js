@@ -14,7 +14,6 @@ function IndexController(applicationDataFactory, contextPath, $state) {
     });
 
     vm.stateExists = function(name) {
-        console.log(name);
         return $state.get(name) != null;
     };
 

@@ -10,9 +10,15 @@
         <thead>
         <tr>
             
+                <th>Id</th>
+            
+                <th>Tally Wags</th>
+            
+                <th>Foo</th>
+            
                 <th>Name</th>
             
-                <th>Part Type</th>
+                <th>Bars</th>
             
         </tr>
         </thead>
@@ -20,11 +26,31 @@
             <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="part in vm.partList">
                 
                     
-                        <td><a ui-sref="part.show({id: part.id})"><span>{{part.name}}</span></a></td>
+                        <td><a ui-sref="part.show({id: part.id})"><span>{{part.id}}</span></a></td>
                     
                 
                     
-                        <td><a ui-sref="partType.show({id: part.partType.id})">{{part.partType.toString()}}</a></td>
+                        <td><ul ng-repeat="tag in part.tallyWags">
+  <li>
+    <a ui-sref="tag.show({id: tag.id})">{{tag.toString()}}</a>
+  </li>
+</ul></td>
+                    
+                
+                    
+                        <td><a ui-sref="partType.show({id: part.foo.id})">{{part.foo.toString()}}</a></td>
+                    
+                
+                    
+                        <td><span>{{part.name}}</span></td>
+                    
+                
+                    
+                        <td><ul ng-repeat="subPart in part.bars">
+  <li>
+    <a ui-sref="subPart.show({id: subPart.id})">{{subPart.toString()}}</a>
+  </li>
+</ul></td>
                     
                 
             </tr>
