@@ -9,7 +9,7 @@ function TagCreateController(Tag, $state) {
     var vm = this;
     
     vm.tag = new Tag();
-
+    
     vm.saveTag = function() {
         vm.errors = undefined;
         vm.tag.$save({}, function() {

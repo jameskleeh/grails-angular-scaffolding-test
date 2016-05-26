@@ -9,8 +9,8 @@ function domainConversion($injector) {
     return function(domainClass, property) {
         return function(domain) {
             var Domain;
-            if (!domainCache[domainClass]) { 
-                domainCache[domainClass] = $injector.get(domainClass); console.log('executing the injector ' + domainClass);
+            if (!domainCache[domainClass]) {
+                domainCache[domainClass] = $injector.get(domainClass);
             }
             Domain = domainCache[domainClass];
             domain[property] = new Domain(domain[property]);

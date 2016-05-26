@@ -1,14 +1,14 @@
-
-<div class="fieldcontain required">
-  <label for="mainPart">Main Part
-    <span class="required-indicator">*</span>
-  </label>
-  <select required="" ng-model="vm.subPart.mainPart" name="mainPart" id="mainPart" ng-options="part for part in vm.partList track by part.id"></select>
-</div>
-
-<div class="fieldcontain required">
-  <label for="name">Name
-    <span class="required-indicator">*</span>
-  </label>
-  <input required="" ng-model="vm.subPart.name" name="name" id="name" type="text" />
-</div>
+<fieldset class="form">
+  <div class="fieldcontain required">
+    <label for="mainPart">Main Part
+      <span class="required-indicator">*</span>
+    </label>
+    <select required="" name="mainPart" id="mainPart" ng-model="vm.subPart.mainPart" ng-options="part for part in vm.partList track by part.id"></select>
+  </div>
+  <div class="fieldcontain required">
+    <label for="name">Name
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="name" id="name" ng-model="vm.subPart.name" type="text" />
+  </div>
+</fieldset>

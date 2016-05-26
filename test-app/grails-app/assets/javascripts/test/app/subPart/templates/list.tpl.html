@@ -7,35 +7,27 @@
 <div id="list-subPart" class="content scaffold-list" role="main">
     <h1>SubPart List</h1>
     <table>
-        <thead>
-        <tr>
-            
-                <th>Id</th>
-            
-                <th>Main Part</th>
-            
-                <th>Name</th>
-            
-        </tr>
-        </thead>
-        <tbody>
-            <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="subPart in vm.subPartList">
-                
-                    
-                        <td><a ui-sref="subPart.show({id: subPart.id})"><span>{{subPart.id}}</span></a></td>
-                    
-                
-                    
-                        <td><a ui-sref="part.show({id: subPart.mainPart.id})">{{subPart.mainPart.toString()}}</a></td>
-                    
-                
-                    
-                        <td><span>{{subPart.name}}</span></td>
-                    
-                
-            </tr>
-        </tbody>
-    </table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Main Part</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="subPart in vm.subPartList">
+      <td>
+        <a ui-sref="subPart.show({id: subPart.id})">{{subPart.id}}</a>
+      </td>
+      <td>
+        <a ui-sref="part.show({id: subPart.mainPart.id})">{{subPart.mainPart.toString()}}</a>
+      </td>
+      <td>
+        <span>{{subPart.name}}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
     <!--    <div class="pagination">
             <g:paginate total="${partCount ?: 0}" />
         </div>-->
