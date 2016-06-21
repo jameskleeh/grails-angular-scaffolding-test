@@ -1,6 +1,7 @@
 //= wrapped
 //= require /angular/angular 
 //= require /angular/angular-ui-router
+//= require /com/myblog/core/com.myblog.core
 //= require /com/myblog/tag/com.myblog.tag
 //= require_self
 //= require_tree services
@@ -11,6 +12,7 @@
 
 angular.module("com.myblog.post", [
     "ui.router",
+    "com.myblog.core",
     "com.myblog.tag"
 ]).config(config);
 
