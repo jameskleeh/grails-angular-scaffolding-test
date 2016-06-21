@@ -1,14 +1,14 @@
 package test.app
 
-import com.myblog.PostContent
+import com.myblog.Comment
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 
 /**
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
  */
-@TestFor(PostContent)
-class AddressSpec extends Specification {
+@TestFor(Comment)
+class UserSpec extends Specification {
 
     def setup() {
     }

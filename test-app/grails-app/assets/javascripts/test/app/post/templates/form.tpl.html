@@ -1,0 +1,31 @@
+<fieldset class="form">
+  <div class="fieldcontain">
+    <label for="comments">Comments</label>
+    <a ui-sref="comment.create({postId: vm.post.id})">Add Comment</a>
+  </div>
+  <fieldset class="embedded postContent">
+    <legend>Post Content</legend>
+    <div class="fieldcontain required">
+      <label for="postContent.city">City
+        <span class="required-indicator">*</span>
+      </label>
+      <input required="" name="postContent.city" id="postContent.city" ng-model="vm.post.postContent.city" type="text" />
+    </div>
+    <div class="fieldcontain required">
+      <label for="postContent.moved">Moved
+        <span class="required-indicator">*</span>
+      </label>
+      <input required="" name="postContent.moved" id="postContent.moved" ng-model="vm.post.postContent.moved" type="date" placeholder="YYYY-MM-DD" />
+    </div>
+  </fieldset>
+  <div class="fieldcontain required">
+    <label for="url">Url
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="url" id="url" ng-model="vm.post.url" type="url" />
+  </div>
+  <div class="fieldcontain">
+    <label for="tags">Tags</label>
+    <select name="tags" id="tags" ng-model="vm.post.tags" ng-options="tag for tag in vm.tagList track by tag.id" multiple=""></select>
+  </div>
+</fieldset>

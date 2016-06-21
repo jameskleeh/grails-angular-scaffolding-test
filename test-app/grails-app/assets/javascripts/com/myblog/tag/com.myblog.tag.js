@@ -1,6 +1,6 @@
 //= wrapped
 //= require /angular/angular 
-//= require /test/app/core/test.app.core
+
 //= require_self
 //= require_tree services
 //= require_tree controllers
@@ -8,4 +8,4 @@
 //= require_tree domain
 //= require_tree templates
 
-angular.module("test.app.tag", ["test.app.core"]);
+angular.module("com.myblog.tag", []);

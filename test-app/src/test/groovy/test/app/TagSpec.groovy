@@ -1,5 +1,6 @@
 package test.app
 
+import com.myblog.Tag
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 

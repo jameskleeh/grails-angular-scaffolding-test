@@ -1,12 +1,12 @@
 //= wrapped
 
 angular
-    .module("test.app.tag")
+    .module("com.myblog.tag")
     .factory("Tag", Tag);
 
 function Tag($resource) {
     var Tag = $resource(
-        "part/:id",
+        "post/:id",
         {"id": "@id"},
         {"update": {method: "PUT"},
          "query": {method: "GET", isArray: true},
@@ -16,7 +16,7 @@ function Tag($resource) {
     Tag.list = Tag.query;
 
     Tag.prototype.toString = function() {
-        return 'test.app.Tag : ' + (this.id ? this.id : '(unsaved)');
+        return 'com.myblog.Tag : ' + (this.id ? this.id : '(unsaved)');
     };
 
     return Tag;
