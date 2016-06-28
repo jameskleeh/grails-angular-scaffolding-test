@@ -1,13 +1,13 @@
 //= wrapped
 
 angular
-    .module("test.app.index")
+    .module("com.myblog.index")
     .controller("IndexController", IndexController);
 
-function IndexController(applicationDataFactory, contextPath, $state) {
+function IndexController(applicationDataFactory, $state) {
     var vm = this;
 
-    vm.contextPath = contextPath;
+    vm.contextPath = '/';
 
     applicationDataFactory.get().then(function(response) {
         vm.applicationData = response.data;

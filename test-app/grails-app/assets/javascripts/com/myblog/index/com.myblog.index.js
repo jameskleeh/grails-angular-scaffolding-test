@@ -7,8 +7,7 @@
 //= require /angular/ui-bootstrap-tpls
 //= require /angular/angular-ui-router
 
-    angular.module("test.app.index", [
-        "test.app.core",
+    angular.module("com.myblog.index", [
         "ui.bootstrap.dropdown",
         "ui.bootstrap.collapse",
         "ui.router"
@@ -19,7 +18,7 @@ function config($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('index', {
             url: "/",
-            templateUrl: "/test/app/index/index.html"
+            templateUrl: "/com/myblog/index/index.html"
         });
 
     $urlRouterProvider.otherwise('/');

@@ -1,15 +1,15 @@
 //= wrapped
 
 angular
-    .module("${moduleName}")
+    .module("com.myblog.post")
     .factory("domainListConversion", domainListConversion);
 
-function domainListConversion(\$injector) {
+function domainListConversion($injector) {
     var delegateCache = {};
     return function(domainClass, property, delegateFunction) {
         return function(domainList) {
             if (!delegateCache[delegateFunction]) {
-                delegateCache[delegateFunction] = \$injector.get(delegateFunction);
+                delegateCache[delegateFunction] = $injector.get(delegateFunction);
             }
             return domainList.map(delegateCache[delegateFunction](domainClass, property));
         };

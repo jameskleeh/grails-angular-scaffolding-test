@@ -65,7 +65,7 @@ dependencies {
     compile "org.hibernate:hibernate-ehcache"
     compile "org.grails.plugins:views-json"
     console "org.grails:grails-console"
-    compile project(":grails-angular-scaffolding")
+    provided project(":grails-angular-scaffolding")
     profile "org.grails.profiles:angular:3.2.0.BUILD-SNAPSHOT"
     runtime "com.h2database:h2"
     runtime "com.bertramlabs.plugins:asset-pipeline-grails:2.8.2"

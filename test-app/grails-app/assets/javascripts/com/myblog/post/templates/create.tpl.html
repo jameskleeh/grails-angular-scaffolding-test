@@ -9,7 +9,6 @@
     <ul class="errors" role="alert" ng-if="vm.errors">
         <li ng-repeat="error in vm.errors">{{error.message}}</li>
     </ul>
-
     <form name="savePost" ng-submit="vm.savePost()">
         <fieldset class="form">
             <ng-include src="'/com/myblog/post/form.html'"></ng-include>

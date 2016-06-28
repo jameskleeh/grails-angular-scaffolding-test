@@ -1,7 +1,5 @@
 package com.myblog
 
-import java.sql.Date
-
 class PostContent {
 
     String title

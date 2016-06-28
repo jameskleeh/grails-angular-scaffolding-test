@@ -1,7 +1,7 @@
 //= wrapped
 
 angular
-    .module("com.myblog.core")
+    .module("com.myblog.post")
     .factory("domainToManyConversion", domainToManyConversion);
 
 function domainToManyConversion($injector) {

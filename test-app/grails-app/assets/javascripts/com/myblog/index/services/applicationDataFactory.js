@@ -1,7 +1,7 @@
 //= wrapped
 
 angular
-    .module("test.app.index")
+    .module("com.myblog.index")
     .factory("applicationDataFactory", applicationDataFactory);
 
 function applicationDataFactory($http) {

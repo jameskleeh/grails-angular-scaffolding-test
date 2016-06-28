@@ -1,4 +1,5 @@
 //= wrapped
+//= require /angular/angular-resource
 
 angular
     .module("com.myblog.tag")
@@ -6,7 +7,7 @@ angular
 
 function Tag($resource) {
     var Tag = $resource(
-        "post/:id",
+        "bars/:id",
         {"id": "@id"},
         {"update": {method: "PUT"},
          "query": {method: "GET", isArray: true},

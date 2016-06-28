@@ -11,7 +11,9 @@
     <tr>
       <th>Id</th>
       <th>Comments</th>
-      <th>Post Content</th>
+      <th>Published</th>
+      <th>Title</th>
+      <th>Body</th>
       <th>Url</th>
       <th>Tags</th>
     </tr>
@@ -29,7 +31,13 @@
         </ul>
       </td>
       <td>
-        <a ui-sref="postContent.show({id: post.postContent.id})">{{post.postContent.toString()}}</a>
+        <span>{{post.postContent.published | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>
+      </td>
+      <td>
+        <span>{{post.postContent.title}}</span>
+      </td>
+      <td>
+        <span>{{post.postContent.body}}</span>
       </td>
       <td>
         <span>{{post.url}}</span>

@@ -21,7 +21,7 @@
     </script>
 </head>
 
-<body ng-app="test.app" ng-controller="IndexController as indexCtrl">
+<body ng-app="com.myblog" ng-controller="IndexController as indexCtrl">
 
     <div class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
@@ -81,6 +81,6 @@
         <g:message code="spinner.alt" default="Loading&hellip;"/>
     </div>
 
-    <asset:javascript src="/test/app/test.app.js" />
+    <asset:javascript src="/com/myblog/com.myblog.js" />
 </body>
 </html>

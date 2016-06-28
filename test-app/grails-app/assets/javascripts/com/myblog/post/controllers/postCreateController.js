@@ -10,6 +10,7 @@ function PostCreateController(Post, $state, Tag) {
     vm.tagList = Tag.list();
     vm.post = new Post();
     
+    
     vm.savePost = function() {
         vm.errors = undefined;
         vm.post.$save({}, function() {
