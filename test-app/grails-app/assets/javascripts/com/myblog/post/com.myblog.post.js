@@ -2,6 +2,8 @@
 //= require /angular/angular 
 //= require /angular/angular-ui-router
 //= require /angular/angular-resource
+//= require /com/myblog/core/com.myblog.core
+//= require /com/myblog/comment/com.myblog.comment
 //= require /com/myblog/tag/com.myblog.tag
 //= require_self
 //= require_tree services
@@ -13,6 +15,8 @@
 angular.module("com.myblog.post", [
     "ui.router",
     "ngResource",
+    "com.myblog.core",
+    "com.myblog.comment",
     "com.myblog.tag"
 ]).config(config);
 

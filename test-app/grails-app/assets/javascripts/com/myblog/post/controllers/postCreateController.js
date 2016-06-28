@@ -4,12 +4,12 @@ angular
     .module("com.myblog.post")
     .controller("PostCreateController", PostCreateController);
 
-function PostCreateController(Post, $state, Tag) {
+function PostCreateController(Post, $state, Comment, Tag) {
 
     var vm = this;
+    vm.commentList = Comment.list();
     vm.tagList = Tag.list();
     vm.post = new Post();
-    
     
     vm.savePost = function() {
         vm.errors = undefined;

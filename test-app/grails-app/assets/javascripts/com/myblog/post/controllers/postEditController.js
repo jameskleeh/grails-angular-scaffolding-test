@@ -4,9 +4,10 @@ angular
     .module("com.myblog.post")
     .controller("PostEditController", PostEditController);
 
-function PostEditController(Post, $stateParams, $state, Tag) {
+function PostEditController(Post, $stateParams, $state, Comment, Tag) {
     var vm = this;
 
+    vm.commentList = Comment.list();
     vm.tagList = Tag.list();
 
     Post.get({id: $stateParams.id}, function(data) {

@@ -62,6 +62,7 @@ dependencies {
     compile "org.grails.plugins:cache"
     compile "org.grails:grails-plugin-gsp"
     compile "org.grails.plugins:hibernate4"
+    compile "org.grails.plugins:scaffolding"
     compile "org.hibernate:hibernate-ehcache"
     compile "org.grails.plugins:views-json"
     console "org.grails:grails-console"

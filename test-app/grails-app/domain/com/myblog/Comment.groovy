@@ -1,5 +1,8 @@
 package com.myblog
 
+import grails.rest.Resource
+
+@Resource(uri="/comment")
 class Comment {
 
     String text

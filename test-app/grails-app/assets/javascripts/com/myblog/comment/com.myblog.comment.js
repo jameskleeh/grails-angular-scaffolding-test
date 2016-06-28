@@ -8,4 +8,4 @@
 //= require_tree domain
 //= require_tree templates
 
-angular.module("com.myblog.tag", ["com.myblog.core"]);
+angular.module("com.myblog.comment", ["com.myblog.core"]);
