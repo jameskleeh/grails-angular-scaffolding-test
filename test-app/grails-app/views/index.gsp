@@ -1,79 +1,86 @@
 <!doctype html>
-<html>
+<html lang="en" class="no-js">
 <head>
-    <meta name="layout" content="main"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>Welcome to Grails</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+
+    <asset:stylesheet src="application.css"/>
 
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
-</head>
-<body>
-    <content tag="nav">
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Application Status <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Environment: ${grails.util.Environment.current.name}</a></li>
-                <li><a href="#">App profile: ${grailsApplication.config.grails?.profile}</a></li>
-                <li><a href="#">App version:
-                    <g:meta name="info.app.version"/></a>
-                </li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Grails version:
-                    <g:meta name="info.app.grailsVersion"/></a>
-                </li>
-                <li><a href="#">Groovy version: ${GroovySystem.getVersion()}</a></li>
-                <li><a href="#">JVM version: ${System.getProperty('java.version')}</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Artefacts <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Controllers: ${grailsApplication.controllerClasses.size()}</a></li>
-                <li><a href="#">Domains: ${grailsApplication.domainClasses.size()}</a></li>
-                <li><a href="#">Services: ${grailsApplication.serviceClasses.size()}</a></li>
-                <li><a href="#">Tag Libraries: ${grailsApplication.tagLibClasses.size()}</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Installed Plugins <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-                    <li><a href="#">${plugin.name} - ${plugin.version}</a></li>
-                </g:each>
-            </ul>
-        </li>
-    </content>
 
-    <div class="svg" role="presentation">
-        <div class="grails-logo-container">
-            <asset:image src="grails-cupsonly-logo-white.svg" class="grails-logo"/>
+    <script type="text/javascript">
+        window.contextPath = "${request.contextPath}";
+    </script>
+</head>
+
+<body ng-app="test.app" ng-controller="IndexController as indexCtrl">
+
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" ng-click="navExpanded = !navExpanded">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/#">
+                    <i class="fa grails-icon">
+                        <asset:image src="grails-cupsonly-logo-white.svg"/>
+                    </i> Grails
+                </a>
+            </div>
+            <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;" uib-collapse="!navExpanded">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown" uib-dropdown>
+                        <a href="#" class="dropdown-toggle" uib-dropdown-toggle role="button" aria-haspopup="true" aria-expanded="false">Application Status <span class="caret"></span></a>
+                        <ul class="dropdown-menu" uib-dropdown-menu>
+                            <li><a href="#">Environment: {{indexCtrl.applicationData.environment}}</a></li>
+                            <li><a href="#">App profile: {{indexCtrl.applicationData.appprofile}}</a></li>
+                            <li><a href="#">App version: {{indexCtrl.applicationData.appversion}}</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Grails version: {{indexCtrl.applicationData.grailsversion}}</a></li>
+                            <li><a href="#">Groovy version: {{indexCtrl.applicationData.groovyversion}}</a></li>
+                            <li><a href="#">JVM version: {{indexCtrl.applicationData.jvmversion}}</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Reloading active: {{indexCtrl.applicationData.reloadingagentenabled}}</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" uib-dropdown>
+                        <a href="#" class="dropdown-toggle" uib-dropdown-toggle role="button" aria-haspopup="true" aria-expanded="false">Artefacts <span class="caret"></span></a>
+                        <ul class="dropdown-menu" uib-dropdown-menu>
+                            <li><a href="#">Controllers: {{indexCtrl.applicationData.artefacts.controllers}}</a></li>
+                            <li><a href="#">Domains: {{indexCtrl.applicationData.artefacts.domains}}</a></li>
+                            <li><a href="#">Services: {{indexCtrl.applicationData.artefacts.services}}</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" uib-dropdown>
+                        <a href="#" class="dropdown-toggle" uib-dropdown-toggle role="button" aria-haspopup="true" aria-expanded="false">Installed Plugins <span class="caret"></span></a>
+                        <ul class="dropdown-menu" uib-dropdown-menu>
+                            <li ng-repeat="plugin in indexCtrl.applicationData.plugins"><a href="#">{{plugin.name}} - {{plugin.version}}</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 
-    <div id="content" role="main">
-        <section class="row colset-2-its">
-            <h1>Welcome to Grails</h1>
+    <div ui-view></div>
 
-            <p>
-                Congratulations, you have successfully started your first Grails application! At the moment
-                this is the default page, feel free to modify it to either redirect to a controller or display
-                whatever content you may choose. Below is a list of controllers that are currently deployed in
-                this application, click on each to execute its default action:
-            </p>
+    <div class="footer" role="contentinfo"></div>
 
-            <div id="controllers" role="navigation">
-                <h2>Available Controllers:</h2>
-                <ul>
-                    <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-                        <li class="controller">
-                            <g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link>
-                        </li>
-                    </g:each>
-                </ul>
-            </div>
-        </section>
+    <div id="spinner" class="spinner" style="display:none;">
+        <g:message code="spinner.alt" default="Loading&hellip;"/>
     </div>
 
+    <asset:javascript src="/test/app/test.app.js" />
 </body>
 </html>
